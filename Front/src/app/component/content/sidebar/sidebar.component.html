@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row justify-content-center p-2">
+        <div class="col-sm-4">
+            <div class="card border-primary ">
+                <div class="card-header">Documents</div>
+                <div class="card-body text-primary" *ngFor="let name of documents">
+                    <div class="row">
+                        <div class="col-sm-6" (click)="getDocumentByName(name)">{{name}}</div>
+                        <div class="col-sm-3"><button class="btn btn-primary"
+                                (click)="deleteDocument(name)">delete</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" (click)="someFunction()"
+                                [disabled]="state" disabled>Edit</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card border-primary ">
+                <app-file-content [details]="myDocument" *ngIf="getDocumentByName"></app-file-content>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-primary" (click)="resetForm()">New Document</button>
+        </div>
+    </div>
+</div>

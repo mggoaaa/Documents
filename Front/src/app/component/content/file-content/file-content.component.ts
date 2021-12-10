@@ -20,6 +20,7 @@ export class FileContentComponent implements OnInit {
       this.documentsServices.putFile(this.details.name, this.details)
         .subscribe(document => {
           console.log(document);
+          alert('Was update')
           this.sidebar.getAllDocuments();
         })
     } else {
@@ -27,6 +28,7 @@ export class FileContentComponent implements OnInit {
       this.documentsServices.postFile(this.details)
         .subscribe(document => {
           console.log(document);
+          alert('Was added');
           this.sidebar.getAllDocuments();
         })
     }

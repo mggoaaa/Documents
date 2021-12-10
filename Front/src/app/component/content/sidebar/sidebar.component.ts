@@ -35,6 +35,7 @@ export class SidebarComponent implements OnInit {
       res => {
         console.log(res)
         this.getAllDocuments();
+        alert("Was deleted");
       },
       err => console.log(err)
     )
